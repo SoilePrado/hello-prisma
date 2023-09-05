@@ -11,5 +11,10 @@
 			"src": "(.*)",
 			"dest": "src/server.ts"
 		}
-	]
+	],
+  "build": {
+    "env": {
+      "PRISMA_CLIENT_GENERATE": "true"
+    }
+  }
 }
