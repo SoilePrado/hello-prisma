@@ -16,4 +16,20 @@ export default class UserRepository {
     });
     return users;
   }
+
+  async createUser(user: any) {
+    const newUser = await this.prisma.user.create({
+      data: {
+        name: user.name,
+        email: user.email,
+        posts: {
+          create: { title: user.posts.title },
+        },
+        profile: {
+          create: { bio: user.bio },
+        },
+      },
+    });
+    return newUser;
+  }
 }

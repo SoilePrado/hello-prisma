@@ -11,4 +11,9 @@ export default class UserService {
     const users = await this.repository.getUsers();
     return users;
   }
+
+  async createUser(user: any) {
+    const newUser = await this.repository.createUser(user);
+    return newUser;
+  }
 }

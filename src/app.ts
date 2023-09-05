@@ -29,6 +29,9 @@ export default class App {
     this.app.get('/users', (req: Request, res: Response) => {
       return this.userController.getUsers(req, res);
     });
+    this.app.post('/users', (req: Request, res: Response) => {
+      return this.userController.createUser(req, res);
+    });
   }
 
   public start(PORT: string | number): void {
